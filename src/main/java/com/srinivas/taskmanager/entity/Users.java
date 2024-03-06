@@ -1,2 +1,25 @@
-package com.srinivas.taskmanager.entity;public class Users {
+package com.srinivas.taskmanager.entity;
+
+import jakarta.persistence.*;
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
+@Entity
+@Data
+@AllArgsConstructor
+@NoArgsConstructor
+@Table(name="users",uniqueConstraints = {@UniqueConstraint(columnNames = {"email"})})
+public
+class Users {
+    @Id
+    @GeneratedValue(strategy= GenerationType.IDENTITY)
+    private long id;
+    @Column(name = "name", nullable = false)
+    private String name;
+    @Column(name = "password",nullable = false)
+    private String password;
+    @Column(name = "email",nullable = false)
+    private String email;
+
 }
