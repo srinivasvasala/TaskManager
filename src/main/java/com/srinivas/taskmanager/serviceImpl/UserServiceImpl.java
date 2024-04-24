@@ -29,7 +29,7 @@ public class UserServiceImpl implements UserService {
 
     public Users userDtoToEntity(UserDTO userDTO){
         Users users = new Users();
-        users.setName(userDTO.getName());
+        users.setUsername(userDTO.getName());
         users.setEmail(userDTO.getEmail());
         users.setPassword(userDTO.getPassword());
         return users;
@@ -38,7 +38,7 @@ public class UserServiceImpl implements UserService {
     public UserDTO entityToUserDto(Users savedUsers){
         UserDTO userDTO = new UserDTO();
         userDTO.setId(savedUsers.getId());
-        userDTO.setName(savedUsers.getName());
+        userDTO.setName(savedUsers.getUsername());
         userDTO.setEmail(savedUsers.getEmail());
         userDTO.setPassword(savedUsers.getPassword());
         return userDTO;
